@@ -11,13 +11,14 @@ GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # sätter inbyggd resistor så man inte behöver koppla en egen
 
 client = mqtt.Client("jonny_pi")
-client.connect(mqttBroker) 
+#client.connect(mqttBroker) 
 
 pressed = False
 
 loops = 0
 
 while True:
+	client.connect(mqttBroker)
 	buttonState = GPIO.input(buttonPin)
 	if buttonState == False:
 		time.sleep(0.1)
