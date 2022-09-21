@@ -10,7 +10,7 @@ mqttBroker = "35.228.72.67"  # IP address of the MQTT broker
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 # Enable pull up resistor on button so we dont need an external resistor
 
-client = mqtt.Client("jonny_pi")  # Set client name for MQTT
+client = mqtt.Client() # Anonemous connection
 
 pressed = False  # Variable to keep track of button state
 
